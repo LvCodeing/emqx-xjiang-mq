@@ -1,37 +1,37 @@
 %%-*- mode: erlang -*-
 %% emq_auth_pgsl config mapping
 
-{mapping, "kafka.host", "emq_xjiang_mq.broker", [
+{mapping, "kafka.host", "emqx_xjiang_mq.broker", [
   {default, "localhost"},
   {datatype, string}
 ]}.
 
-{mapping, "kafka.port", "emq_xjiang_mq.broker", [
+{mapping, "kafka.port", "emqx_xjiang_mq.broker", [
   {default, 9092},
   {datatype, integer}
 ]}.
 
-{mapping, "kafka.partitionstrategy", "emq_xjiang_mq.broker", [
+{mapping, "kafka.partitionstrategy", "emqx_xjiang_mq.broker", [
   {default, "strict_round_robin"},
   {datatype, string}
 ]}.
 
-{mapping, "kafka.partitionworkers", "emq_xjiang_mq.broker", [
+{mapping, "kafka.partitionworkers", "emqx_xjiang_mq.broker", [
   {default, 8},
   {datatype, integer}
 ]}.
 
-{mapping, "kafka.payloadtopic", "emq_xjiang_mq.broker", [
+{mapping, "kafka.payloadtopic", "emqx_xjiang_mq.broker", [
   {default, "Payload"},
   {datatype, string}
 ]}.
 
-{mapping, "kafka.eventtopic", "emq_xjiang_mq.broker", [
+{mapping, "kafka.eventtopic", "emqx_xjiang_mq.broker", [
   {default, "Event"},
   {datatype, string}
 ]}.
 
-{translation, "emq_xjiang_mq.broker", fun(Conf) ->
+{translation, "emqx_xjiang_mq.broker", fun(Conf) ->
   KafkaHost = cuttlefish:conf_get("kafka.host", Conf),
   KafkaPort = cuttlefish:conf_get("kafka.port", Conf),
   KafkaPartitionStrategy = cuttlefish:conf_get("kafka.partitionstrategy", Conf),
